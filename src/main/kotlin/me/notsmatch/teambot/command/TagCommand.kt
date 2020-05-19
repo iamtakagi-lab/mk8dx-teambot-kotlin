@@ -49,15 +49,7 @@ class TagCommand : Command() {
                 }
 
                 //結果出力
-                reply(EmbedBuilder().apply {
-                    setColor(Color.YELLOW)
-                    setAuthor(
-                        "タグ",
-                        null,
-                        null
-                    )
-                    setDescription(AlphabetUtils.randomAlphabets(tagLength))
-                }.build())
+                reply("タグ: " + AlphabetUtils.randomAlphabets(tagLength))
             }
         }
     }
