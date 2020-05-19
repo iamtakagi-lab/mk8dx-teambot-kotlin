@@ -22,18 +22,6 @@ class TagCommand : Command() {
             var tagLength: Int = 0
             if (args.isNotEmpty()) {
 
-                if(args.contains("　")){
-                    return reply(EmbedBuilder().apply {
-                        setColor(Color.RED)
-                        setAuthor(
-                            "Error",
-                            null,
-                            null
-                        )
-                        setDescription("半角スペースにしてください")
-                    }.build())
-                }
-
                 if(!NumberUtils.isInteger(args[0])){
                     return reply(EmbedBuilder().apply {
                         setColor(Color.RED)
