@@ -19,5 +19,5 @@ _tbot
 
 10文字まで小文字か大文字でタグを決めてくれる
 
-![](https://i.imgur.com/HpIeJW0.png)
+![](https://i.imgur.com/vuGWVAZ.png)
 
