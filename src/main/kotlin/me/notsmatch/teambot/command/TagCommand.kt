@@ -11,7 +11,7 @@ class TagCommand : Command() {
 
     init {
         this.name = "tag"
-        this.help = "ランダムにタグを決めてくれます"
+        this.help = "ランダムにタグを決めます"
         this.arguments = "<文字数>"
     }
 
