@@ -1,7 +1,7 @@
 # mk8dx-teambot
 チーム分けとかタグ決めとかやってくれるBot
 
-![](https://imgur.com/a/UyEXUDL)
+![](https://i.imgur.com/ftk7mP0.png)
 
 ![](https://i.imgur.com/Fi3NdCd.png)
 
