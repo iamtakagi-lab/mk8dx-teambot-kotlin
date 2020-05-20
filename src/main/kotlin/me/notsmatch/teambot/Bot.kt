@@ -1,6 +1,7 @@
 package me.notsmatch.teambot
 
 import com.jagrosh.jdautilities.command.CommandClientBuilder
+import me.notsmatch.teambot.command.ChooseCommand
 import me.notsmatch.teambot.command.TagCommand
 import me.notsmatch.teambot.command.TeamCommand
 import net.dv8tion.jda.api.AccountType
@@ -30,7 +31,7 @@ class Bot (private val token: String) {
         random = Random()
         jda = JDABuilder(AccountType.BOT).setToken(token).setStatus(OnlineStatus.ONLINE).build()
         val builder = CommandClientBuilder()
-        builder.addCommands(TeamCommand(), TagCommand())
+        builder.addCommands(TeamCommand(), TagCommand(), ChooseCommand())
 
         builder.setOwnerId("695218967173922866")
         builder.setPrefix("_")
