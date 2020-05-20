@@ -11,7 +11,7 @@ class ChooseCommand : Command() {
 
     init {
         this.name = "c"
-        this.help = "Chooseします (上限20)"
+        this.help = "Chooseします (20まで)"
         this.arguments = "<選択肢1> <選択肢2> <選択肢3>..."
     }
 

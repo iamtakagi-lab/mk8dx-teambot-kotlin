@@ -1,1 +1,1 @@
-worker: java -jar build/libs/mk8dx-teambot-1.0-SNAPSHOT.jar
+worker: java -jar build/libs/mk8dx-teambot-1.0.1-SNAPSHOT.jar
