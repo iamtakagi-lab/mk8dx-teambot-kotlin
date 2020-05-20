@@ -17,7 +17,7 @@ class TagCommand : Command() {
 
     override fun execute(event: CommandEvent?) {
         event?.apply {
-            val args = args.split(" ")
+            val args = args.replace("  ", " ").split(" ")
 
             var tagLength: Int = 0
             if (args.isNotEmpty()) {
