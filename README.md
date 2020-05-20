@@ -17,7 +17,12 @@ _tbot
 
 ## タグ決め
 
-10文字まで小文字か大文字でタグを決めてくれる
+10文字まで小文字か大文字でタグを決めてくれます
 
 ![](https://i.imgur.com/vuGWVAZ.png)
 
+## Choose機能
+
+ランダムでChooseしてくれます (20まで)
+
+![](https://i.imgur.com/XGH1djb.png)
