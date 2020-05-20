@@ -87,7 +87,7 @@ class TeamCommand : Command() {
                 )
                 for(i in teams.indices){
                     val team = teams[i]
-                    addField(AlphabetUtils.getAlphabet(i).toUpperCase() + "(" + team.size + "人" + ")", team.toString().replace("[", "").replace("]", ""), true);
+                    addField(AlphabetUtils.getAlphabet(i).toUpperCase() + " (" + team.size + ")", team.toString().replace("[", "").replace("]", ""), true);
                 }
             }.build())
         }
