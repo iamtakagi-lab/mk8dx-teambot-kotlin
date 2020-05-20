@@ -18,7 +18,7 @@ class TeamCommand : Command() {
 
     override fun execute(event: CommandEvent?) {
         event?.apply {
-            val args = args.split(" ")
+            val args = args.replace("  ", " ").split(" ")
 
             var makeTeamSize: Int = 0
             if (args.isNotEmpty()) {
@@ -87,7 +87,7 @@ class TeamCommand : Command() {
                 )
                 for(i in teams.indices){
                     val team = teams[i]
-                    addField(AlphabetUtils.getAlphabet(i).toUpperCase(), team.toString().replace("[", "").replace("]", ""), true);
+                    addField(AlphabetUtils.getAlphabet(i).toUpperCase() + "(" + team.size + "人" + ")", team.toString().replace("[", "").replace("]", ""), true);
                 }
             }.build())
         }
