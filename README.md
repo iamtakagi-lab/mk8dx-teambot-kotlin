@@ -7,7 +7,7 @@ https://discord.com/api/oauth2/authorize?client_id=711910347711316039&permission
 
 _tbot
 
-![](https://i.imgur.com/ftk7mP0.png)
+![](https://i.imgur.com/dlWx3gl.png)
 
 ## チーム分け
 
