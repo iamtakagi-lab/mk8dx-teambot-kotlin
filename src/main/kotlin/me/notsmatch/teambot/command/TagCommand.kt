@@ -5,6 +5,7 @@ import com.jagrosh.jdautilities.command.CommandEvent
 import me.notsmatch.teambot.util.AlphabetUtils
 import me.notsmatch.teambot.util.NumberUtils
 import net.dv8tion.jda.api.EmbedBuilder
+import org.apache.commons.lang3.StringUtils
 import java.awt.Color
 
 class TagCommand : Command() {
@@ -17,7 +18,7 @@ class TagCommand : Command() {
 
     override fun execute(event: CommandEvent?) {
         event?.apply {
-            val args = args.replace("  ", " ").split(" ")
+            val args = StringUtils.split(args)
 
             var tagLength: Int = 0
             if (args.isNotEmpty()) {

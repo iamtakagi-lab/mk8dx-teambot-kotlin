@@ -6,6 +6,7 @@ import me.notsmatch.teambot.util.AlphabetUtils
 import me.notsmatch.teambot.util.NumberUtils
 import me.notsmatch.teambot.util.TeamUtils
 import net.dv8tion.jda.api.EmbedBuilder
+import org.apache.commons.lang3.StringUtils
 import java.awt.Color
 
 class TeamCommand : Command() {
@@ -18,7 +19,7 @@ class TeamCommand : Command() {
 
     override fun execute(event: CommandEvent?) {
         event?.apply {
-            val args = args.replace("  ", " ").split(" ")
+            val args = StringUtils.split(args)
 
             var makeTeamSize: Int = 0
             if (args.isNotEmpty()) {
@@ -59,8 +60,6 @@ class TeamCommand : Command() {
             for (element in copy) {
                 players.add(element)
             }
-
-            println(players.toString())
 
             if (players.size > 12) {
                 return reply(EmbedBuilder().apply {
