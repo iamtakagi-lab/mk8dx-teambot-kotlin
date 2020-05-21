@@ -7,13 +7,11 @@ https://discord.com/api/oauth2/authorize?client_id=711910347711316039&permission
 
 _tbot
 
-![](https://i.imgur.com/dlWx3gl.png)
+![](https://i.imgur.com/U0IfrkT.png)
 
 ## チーム分け
 
-6チーム12名まで対応
-
-![](https://i.imgur.com/Fi3NdCd.png)
+![](https://i.imgur.com/YdbDlEu.png)
 
 ## タグ決め
 
