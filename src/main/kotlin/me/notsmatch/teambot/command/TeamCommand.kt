@@ -8,20 +8,22 @@ import me.notsmatch.teambot.util.TeamUtils
 import net.dv8tion.jda.api.EmbedBuilder
 import org.apache.commons.lang3.StringUtils
 import java.awt.Color
+import kotlin.math.ceil
+import kotlin.math.round
 
 class TeamCommand : Command() {
 
     init {
         this.name = "t"
-        this.help = "チーム分けをします"
-        this.arguments = "<チーム数> <name1> <name2> <name3>..."
+        this.help = "チーム分けをします\nチーム形式\n2: 2v2\n3: 3v3\n4: 4v4\n5: 5v5\n6: 6v6"
+        this.arguments = "<チーム形式> <name1> <name2> <name3>..."
     }
 
     override fun execute(event: CommandEvent?) {
         event?.apply {
             val args = StringUtils.split(args)
 
-            var makeTeamSize: Int = 0
+            var teamType: Int = 0
             if (args.isNotEmpty()) {
 
                 if(!NumberUtils.isInteger(args[0])){
@@ -32,13 +34,19 @@ class TeamCommand : Command() {
                             null,
                             null
                         )
-                        setDescription("チーム数は1~6で指定してください\n``_t <チーム数> <name1> <name2> <name3>...``")
+                        setDescription("チーム形式は2~6で指定してください\n``_t <チーム形式> <name1> <name2> <name3>...``\n" +
+                                "チーム形式\n" +
+                                "2: 2v2\n" +
+                                "3: 3v3\n" +
+                                "4: 4v4\n" +
+                                "5: 5v5\n" +
+                                "6: 6v6")
                     }.build())
                 }
 
-                makeTeamSize = args[0].toInt()
+                teamType = args[0].toInt()
 
-                if(makeTeamSize > 6 || makeTeamSize < 1){
+                if(teamType > 6 || teamType < 2){
                     return reply(EmbedBuilder().apply {
                         setColor(Color.RED)
                         setAuthor(
@@ -46,7 +54,13 @@ class TeamCommand : Command() {
                             null,
                             null
                         )
-                        setDescription("チーム数は1~6で指定してください\n``_t <チーム数> <name1> <name2> <name3>...``")
+                        setDescription("チーム形式は2~6で指定してください\n``_t <チーム形式> <name1> <name2> <name3>...``\n" +
+                                "チーム形式\n" +
+                                "2: 2v2\n" +
+                                "3: 3v3\n" +
+                                "4: 4v4\n" +
+                                "5: 5v5\n" +
+                                "6: 6v6")
                     }.build())
                 }
             }
@@ -73,20 +87,23 @@ class TeamCommand : Command() {
                 }.build())
             }
 
-            // 格納用
+
+            val makeTeamSize = (players.size + teamType - 1 ) / teamType
+
             val teams = TeamUtils.compose(players, makeTeamSize)
 
             //結果出力
             reply(EmbedBuilder().apply {
                 setColor(Color.YELLOW)
                 setAuthor(
-                    "チーム分け結果",
+                    "チーム分け結果" + "(" + teamType + "v" + teamType + ")",
                     null,
                     null
                 )
-                for(i in teams.indices){
-                    val team = teams[i]
-                    addField(AlphabetUtils.getAlphabet(i).toUpperCase() + " (" + team.size + ")", team.toString().replace("[", "").replace("]", ""), true);
+                var i = 0
+                teams.filter { team -> team.isNotEmpty() }.forEach{ team ->
+                    addField(AlphabetUtils.getAlphabet(i).toUpperCase() + " (" + team.size + ")", team.toString().replace("[", "").replace("]", ""), true)
+                    i++
                 }
             }.build())
         }
