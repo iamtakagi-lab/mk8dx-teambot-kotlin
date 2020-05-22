@@ -25,13 +25,6 @@ object AlphabetUtils {
             tag.append(getAlphabet(Bot.random.nextInt(26)))
         }
 
-        //小文字か大文字かランダムで決める
-        //0なら小文字 1なら大文字
-
-        if(Bot.random.nextInt(2) == 1){
-            return tag.toString().toUpperCase()
-        }
-
-        return tag.toString()
+        return tag.toString() + " | " + tag.toString().toUpperCase()
     }
 }
