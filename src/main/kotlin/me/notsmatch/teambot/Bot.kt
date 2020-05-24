@@ -53,7 +53,7 @@ class Listener : ListenerAdapter() {
         timer.schedule(object : TimerTask() {
             override fun run() {
                 event.jda.apply {
-                    presence.setPresence(OnlineStatus.ONLINE, Activity.watching("type _tbot | ${guilds.size} servers"))
+                    presence.setPresence(OnlineStatus.ONLINE, Activity.watching("github.com/notsmatch/mk8dx-teambot | ${guilds.size} servers"))
                 }
             }
         }, 0, 1000*300)
