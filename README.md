@@ -1,5 +1,5 @@
 # mk8dx-teambot
-Donate/支援・寄付: https://riptakagi.fanbox.cc
+Donate: https://riptakagi.fanbox.cc
 
 チーム分けとかタグ決めとかやってくれるBot
 
