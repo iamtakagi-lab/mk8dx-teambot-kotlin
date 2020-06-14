@@ -1,7 +1,10 @@
 # mk8dx-teambot
-Donate: https://riptakagi.fanbox.cc
-
 チーム分けとかタグ決めとかやってくれるBot
+
+## Donate
+https://riptakagi.fanbox.cc
+* Minami
+* とーふ。/Louix 
 
 https://discord.com/api/oauth2/authorize?client_id=711910347711316039&permissions=3072&scope=bot
 
