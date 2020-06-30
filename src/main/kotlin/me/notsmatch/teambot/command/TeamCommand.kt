@@ -36,6 +36,7 @@ class TeamCommand : Command() {
                         )
                         setDescription("チーム形式は2~6で指定してください\n``_t <チーム形式> <name1> <name2> <name3>...``\n" +
                                 "チーム形式\n" +
+                                "1: FFA\n" +
                                 "2: 2v2\n" +
                                 "3: 3v3\n" +
                                 "4: 4v4\n" +
@@ -46,7 +47,7 @@ class TeamCommand : Command() {
 
                 teamType = args[0].toInt()
 
-                if(teamType > 6 || teamType < 2){
+                if(teamType > 6 || teamType < 1){
                     return reply(EmbedBuilder().apply {
                         setColor(Color.RED)
                         setAuthor(
@@ -56,6 +57,7 @@ class TeamCommand : Command() {
                         )
                         setDescription("チーム形式は2~6で指定してください\n``_t <チーム形式> <name1> <name2> <name3>...``\n" +
                                 "チーム形式\n" +
+                                "1: FFA\n" +
                                 "2: 2v2\n" +
                                 "3: 3v3\n" +
                                 "4: 4v4\n" +
@@ -94,9 +96,16 @@ class TeamCommand : Command() {
 
             //結果出力
             reply(EmbedBuilder().apply {
+                var type = ""
+                if(teamType == 1){
+                    type = "(FFA)"
+                } else {
+                    type = "(" + teamType + "v" + teamType + ")"
+                }
+
                 setColor(Color.YELLOW)
                 setAuthor(
-                    "チーム分け結果" + "(" + teamType + "v" + teamType + ")",
+                    "チーム分け結果 " + type,
                     null,
                     null
                 )
