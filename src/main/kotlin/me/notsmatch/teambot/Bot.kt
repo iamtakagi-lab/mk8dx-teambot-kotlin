@@ -2,10 +2,7 @@ package me.notsmatch.teambot
 
 import com.jagrosh.jdautilities.command.CommandClientBuilder
 import com.jagrosh.jdautilities.commons.waiter.EventWaiter
-import me.notsmatch.teambot.command.ChooseCommand
-import me.notsmatch.teambot.command.GuildlistCommand
-import me.notsmatch.teambot.command.TagCommand
-import me.notsmatch.teambot.command.TeamCommand
+import me.notsmatch.teambot.command.*
 import me.notsmatch.tracktablebot.command.AboutCommand
 import net.dv8tion.jda.api.*
 import net.dv8tion.jda.api.entities.Activity
@@ -37,6 +34,8 @@ class Bot (private val token: String) {
         builder.addCommands(
             TeamCommand(),
             TagCommand(),
+            KanaTagCommand(),
+            NumTagCommand(),
             AboutCommand(Color.GREEN, "https://github.com/riptakagi/mk8dx-teambot", Permission.VIEW_CHANNEL, Permission.MESSAGE_WRITE, Permission.MESSAGE_READ),
             GuildlistCommand(eventWaiter),
             ChooseCommand()
