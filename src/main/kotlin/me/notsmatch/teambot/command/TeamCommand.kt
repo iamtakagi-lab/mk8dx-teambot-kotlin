@@ -2,20 +2,18 @@ package me.notsmatch.teambot.command
 
 import com.jagrosh.jdautilities.command.Command
 import com.jagrosh.jdautilities.command.CommandEvent
-import me.notsmatch.teambot.util.AlphabetUtils
+import me.notsmatch.teambot.util.TagUtils
 import me.notsmatch.teambot.util.NumberUtils
 import me.notsmatch.teambot.util.TeamUtils
 import net.dv8tion.jda.api.EmbedBuilder
 import org.apache.commons.lang3.StringUtils
 import java.awt.Color
-import kotlin.math.ceil
-import kotlin.math.round
 
 class TeamCommand : Command() {
 
     init {
         this.name = "t"
-        this.help = "チーム分けをします\nチーム形式\n2: 2v2\n3: 3v3\n4: 4v4\n5: 5v5\n6: 6v6"
+        this.help = "チーム分けをします\nチーム形式\n1: FFA\n2: 2v2\n3: 3v3\n4: 4v4\n5: 5v5\n6: 6v6"
         this.arguments = "<チーム形式> <name1> <name2> <name3>..."
     }
 
@@ -111,7 +109,7 @@ class TeamCommand : Command() {
                 )
                 var i = 0
                 teams.filter { team -> team.isNotEmpty() }.forEach{ team ->
-                    addField(AlphabetUtils.getAlphabet(i).toUpperCase() + " (" + team.size + ")", team.toString().replace("[", "").replace("]", ""), true)
+                    addField(TagUtils.getAlphabet(i).toUpperCase() + " (" + team.size + ")", team.toString().replace("[", "").replace("]", ""), true)
                     i++
                 }
             }.build())
