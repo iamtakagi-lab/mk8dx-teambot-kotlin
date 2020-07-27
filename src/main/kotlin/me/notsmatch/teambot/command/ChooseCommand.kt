@@ -22,11 +22,7 @@ class ChooseCommand : Command() {
             if(args.size > 20){
                 return reply(EmbedBuilder().apply {
                     setColor(Color.RED)
-                    setAuthor(
-                        "Error",
-                        null,
-                        null
-                    )
+                    setTitle("Error")
                     setDescription("上限を超えています (20まで)")
                 }.build())
             }

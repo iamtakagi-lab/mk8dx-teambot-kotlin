@@ -1,4 +1,4 @@
-package me.notsmatch.tracktablebot.command
+package me.notsmatch.teambot.command
 
 import com.jagrosh.jdautilities.command.Command
 import com.jagrosh.jdautilities.command.CommandEvent
@@ -61,13 +61,14 @@ class GuildlistCommand(waiter: EventWaiter?) : Command() {
     }
 
     init {
-        name = "guildlist"
+        name = "tguildlist"
         help = "shows the list of guilds the bot is on"
         arguments = "[pagenum]"
         botPermissions = arrayOf(
             Permission.MESSAGE_EMBED_LINKS,
             Permission.MESSAGE_ADD_REACTION
         )
+        hidden = true
         guildOnly = false
         ownerCommand = true
         pbuilder = Paginator.Builder().setColumns(1)

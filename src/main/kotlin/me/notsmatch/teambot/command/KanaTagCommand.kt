@@ -26,11 +26,7 @@ class KanaTagCommand : Command() {
                 if (!NumberUtils.isInteger(args[0])) {
                     return reply(EmbedBuilder().apply {
                         setColor(Color.RED)
-                        setAuthor(
-                            "Error",
-                            null,
-                            null
-                        )
+                        setTitle("Error")
                         setDescription("文字数は1~10で指定してください\n``_tag <文字数>``")
                     }.build())
                 }
@@ -40,11 +36,7 @@ class KanaTagCommand : Command() {
                 if (tagLength > 10 || tagLength < 1) {
                     return reply(EmbedBuilder().apply {
                         setColor(Color.RED)
-                        setAuthor(
-                            "Error",
-                            null,
-                            null
-                        )
+                        setTitle("Error")
                         setDescription("文字数は1~10で指定してください\n``_tag <文字数>``")
                     }.build())
                 }
