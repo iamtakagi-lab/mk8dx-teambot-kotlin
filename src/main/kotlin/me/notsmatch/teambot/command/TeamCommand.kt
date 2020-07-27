@@ -2,6 +2,7 @@ package me.notsmatch.teambot.command
 
 import com.jagrosh.jdautilities.command.Command
 import com.jagrosh.jdautilities.command.CommandEvent
+import me.notsmatch.teambot.Config
 import me.notsmatch.teambot.util.TagUtils
 import me.notsmatch.teambot.util.NumberUtils
 import me.notsmatch.teambot.util.TeamUtils
@@ -27,11 +28,7 @@ class TeamCommand : Command() {
                 if(!NumberUtils.isInteger(args[0])){
                     return reply(EmbedBuilder().apply {
                         setColor(Color.RED)
-                        setAuthor(
-                            "Error",
-                            null,
-                            null
-                        )
+                        setTitle("Error")
                         setDescription("チーム形式は2~6で指定してください\n``_t <チーム形式> <name1> <name2> <name3>...``\n" +
                                 "チーム形式\n" +
                                 "1: FFA\n" +
@@ -48,11 +45,7 @@ class TeamCommand : Command() {
                 if(teamType > 6 || teamType < 1){
                     return reply(EmbedBuilder().apply {
                         setColor(Color.RED)
-                        setAuthor(
-                            "Error",
-                            null,
-                            null
-                        )
+                        setTitle("Error")
                         setDescription("チーム形式は2~6で指定してください\n``_t <チーム形式> <name1> <name2> <name3>...``\n" +
                                 "チーム形式\n" +
                                 "1: FFA\n" +
@@ -78,11 +71,7 @@ class TeamCommand : Command() {
             if (players.size > 12) {
                 return reply(EmbedBuilder().apply {
                     setColor(Color.RED)
-                    setAuthor(
-                        "Error",
-                        null,
-                        null
-                    )
+                    setTitle("Error")
                     setDescription("12人を超えています")
                 }.build())
             }
@@ -101,12 +90,8 @@ class TeamCommand : Command() {
                     type = "(" + teamType + "v" + teamType + ")"
                 }
 
-                setColor(Color.YELLOW)
-                setAuthor(
-                    "チーム分け結果 " + type,
-                    null,
-                    null
-                )
+                setColor(Config.EMBED_COLOR)
+                setTitle("チーム分け結果 " + type)
                 var i = 0
                 teams.filter { team -> team.isNotEmpty() }.forEach{ team ->
                     addField(TagUtils.getAlphabet(i).toUpperCase() + " (" + team.size + ")", team.toString().replace("[", "").replace("]", ""), true)

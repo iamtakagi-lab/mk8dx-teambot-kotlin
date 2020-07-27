@@ -43,14 +43,14 @@ object TagUtils {
         return tag.toString() + " | " + tag.toString().toUpperCase()
     }
 
-    fun randomHiragana(length: Int): String{
-        val tag = StringBuilder()
+    fun randomHiragana(length: Int): String {
+        return StringBuilder().apply {
 
-        for(i in 0 until length){
-            tag.append(hiragana[Bot.random.nextInt(hiragana.size)])
-        }
+            for (i in 0 until length) {
+                append(hiragana[Bot.random.nextInt(hiragana.size)])
+            }
 
-        return tag.toString()
+        }.toString()
     }
 
     fun randomNum(length: Int): String{

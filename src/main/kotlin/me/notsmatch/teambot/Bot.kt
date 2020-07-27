@@ -55,8 +55,6 @@ class Bot (private val token: String) {
 class Listener : ListenerAdapter() {
 
     override fun onReady(event: ReadyEvent) {
-        event.jda.guilds.forEach{guild -> println(guild.name)}
-
         val timer = Timer()
         timer.schedule(object : TimerTask() {
             override fun run() {
@@ -66,4 +64,5 @@ class Listener : ListenerAdapter() {
             }
         }, 0, 1000*300)
     }
+
 }
