@@ -3,12 +3,6 @@
 
 https://discord.com/api/oauth2/authorize?client_id=711910347711316039&permissions=3072&scope=bot
 
-## Donate
-https://riptakagi.fanbox.cc
-* Minami
-* とーふ。/Louix 
-
-
 ## コマンド
 
 _tbot
@@ -30,3 +24,5 @@ _tbot
 ランダムでChooseしてくれます (20まで)
 
 ![](https://i.imgur.com/XGH1djb.png)
+
+https://riptakagi.fanbox.cc
